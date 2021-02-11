@@ -39,7 +39,10 @@ class Repo extends Component {
       stars: repoData.stargazers_count,
     };
     console.log("click", newRepoData);
-    Axios.post(`http://localhost:4000/repos`, newRepoData).then((res) => {
+    Axios.post(
+      `https://git.heroku.com/thawing-shore-29742.git/repos`,
+      newRepoData
+    ).then((res) => {
       console.log(res);
       console.log(res.data);
     });
