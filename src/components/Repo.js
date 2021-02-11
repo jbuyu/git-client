@@ -14,12 +14,23 @@ class Repo extends Component {
       this.setState({ repoData });
     });
   }
+  buttonFeed = () => {
+    let { repoData } = this.state;
+    const newRepoData = {
+      owner: repoData.owner.login,
+      repoName: repoData.name,
+      issues: repoData.open_issues,
+      forks: repoData.forks,
+      stars: repoData.stargazers_count,
+    };
+    console.log("click", newRepoData);
+  };
   render() {
     let { repoData } = this.state;
     return (
       <div className="repo">
         <h3>Repo</h3>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Owner</th>
@@ -40,7 +51,7 @@ class Repo extends Component {
               <td>{repoData.forks}</td>
               <td>{repoData.stargazers_count}</td>
               <td>
-                <Button variant="light">
+                <Button variant="light" onClick={this.buttonFeed}>
                   <AiFillStar />
                 </Button>
               </td>
