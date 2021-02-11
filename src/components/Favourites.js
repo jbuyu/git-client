@@ -7,7 +7,7 @@ class Favourites extends Component {
     repos: [],
   };
   componentDidMount() {
-    Axios.get(`https://git.heroku.com/thawing-shore-29742.git/favRepos`).then(
+    Axios.get(`https://thawing-shore-29742.herokuapp.com/favRepos`).then(
       (res) => {
         const { result } = res.data;
         this.setState({ repos: result });

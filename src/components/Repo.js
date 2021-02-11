@@ -40,7 +40,7 @@ class Repo extends Component {
     };
     console.log("click", newRepoData);
     Axios.post(
-      `https://git.heroku.com/thawing-shore-29742.git/repos`,
+      `https://thawing-shore-29742.herokuapp.com/repos`,
       newRepoData
     ).then((res) => {
       console.log(res);
@@ -74,7 +74,7 @@ class Repo extends Component {
               <td>{repoData.forks}</td>
               <td>{repoData.stargazers_count}</td>
               <td>
-                <Button variant="light" onClick={this.buttonFeed}>
+                <Button variant="dark" onClick={this.buttonFeed}>
                   <AiFillStar />
                 </Button>
               </td>
