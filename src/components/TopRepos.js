@@ -27,7 +27,6 @@ class TopRepo extends Component {
     return (
       <>
         <h3>Top Repos</h3>
-
         <div className="ml-5 mr-5">
           <BootstrapTable data={topRepos}>
             <TableHeaderColumn width={"10%"} dataField="name" isKey>
