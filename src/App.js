@@ -5,7 +5,7 @@ import Axios from "axios";
 
 class App extends Component {
   state = {
-    topRepos: {},
+    topRepos: [],
   };
   componentDidMount() {
     Axios.get(
@@ -17,9 +17,10 @@ class App extends Component {
     });
   }
   render() {
+    let { topRepos } = this.state;
     return (
       <div className="App">
-        <TopRepo />
+        <TopRepo topRepos={topRepos} />
       </div>
     );
   }
