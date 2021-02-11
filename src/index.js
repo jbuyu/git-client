@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Repo from "./components/Repo";
 import Favourites from "./components/Favourites";
 import { NavLink } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 const activeStyle = { color: "#F15B2A" };
 ReactDOM.render(

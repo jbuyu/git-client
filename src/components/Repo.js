@@ -3,6 +3,8 @@ import "./Repo.css";
 import { AiFillStar } from "react-icons/ai";
 import Axios from "axios";
 import { Button } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+
 class Repo extends Component {
   state = {
     repoData: {},
@@ -14,6 +16,19 @@ class Repo extends Component {
       this.setState({ repoData });
     });
   }
+
+  //toast
+  notify = () =>
+    toast.success("🦄 Stirrred!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  //feedback
   buttonFeed = () => {
     let { repoData } = this.state;
     const newRepoData = {
@@ -28,6 +43,7 @@ class Repo extends Component {
       console.log(res);
       console.log(res.data);
     });
+    this.notify();
   };
   render() {
     let { repoData } = this.state;
@@ -62,6 +78,7 @@ class Repo extends Component {
             </tr>
           </tbody>
         </table>
+        <ToastContainer />
       </div>
     );
   }
