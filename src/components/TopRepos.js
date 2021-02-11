@@ -32,17 +32,22 @@ class TopRepo extends Component {
             </tbody>
           )}
         </Table> */}
-        <BootstrapTable data={topRepos}>
-          <TableHeaderColumn dataField="name" isKey>
-            Name
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField="description">
-            Description
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField="stargazers_count">
-            Stars
-          </TableHeaderColumn>
-        </BootstrapTable>
+        <div className="ml-5 mr-5">
+          <BootstrapTable data={topRepos}>
+            <TableHeaderColumn width={"10%"} dataField="name" isKey>
+              Name
+            </TableHeaderColumn>
+            <TableHeaderColumn width={"50%"} dataField="description">
+              Description
+            </TableHeaderColumn>
+            <TableHeaderColumn dataField="stargazers_count">
+              Stars
+            </TableHeaderColumn>
+            <TableHeaderColumn dataField="open_issues_count">
+              Open Issues
+            </TableHeaderColumn>
+          </BootstrapTable>
+        </div>
       </>
     );
   }
