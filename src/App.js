@@ -13,7 +13,7 @@ class App extends Component {
     ).then((res) => {
       const topRepos = res.data.items;
       this.setState({ topRepos });
-      console.log(topRepos);
+      // console.log(topRepos);
     });
   }
   render() {

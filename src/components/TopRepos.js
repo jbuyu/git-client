@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./TopRepos.css";
 
 class TopRepo extends Component {
   cellButton(cell, row, enumObject) {
@@ -10,13 +12,14 @@ class TopRepo extends Component {
         cell={cell}
         row={row}
         // rowIndex={rowIndex}
+        variant="outline-dark"
       >
-        View
+        <Link to={"/repos/" + row.owner.login + "/" + row.name}>View</Link>
       </Button>
     );
   }
   showDetails = (row) => {
-    console.log(row);
+    console.log(row.full_name);
   };
   render() {
     let { topRepos } = this.props;
