@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Repo.css";
+import { AiFillStar } from "react-icons/ai";
 import Axios from "axios";
 import { Button } from "react-bootstrap";
 class Repo extends Component {
@@ -39,7 +40,9 @@ class Repo extends Component {
               <td>{repoData.forks}</td>
               <td>{repoData.stargazers_count}</td>
               <td>
-                <Button variant="light">Star</Button>
+                <Button variant="light">
+                  <AiFillStar />
+                </Button>
               </td>
             </tr>
           </tbody>
